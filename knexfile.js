@@ -6,8 +6,8 @@ module.exports = {
     connection: {
       host: process.env.DB_HOST || 'localhost',
       port: Number(process.env.DB_PORT) || 5432,
-      user: process.env.DB_USER || 'jun',
-      password: process.env.DB_PW || 'jun',
+      user: process.env.DB_USER || 'anki',
+      password: process.env.DB_PW || 'anki',
       database: process.env.DB_NAME || 'anki',
     },
     migrations: {
@@ -24,8 +24,8 @@ module.exports = {
     connection: {
       host: process.env.DB_HOST || 'localhost',
       port: Number(process.env.DB_PORT) || 5432,
-      user: process.env.DB_USER || 'jun',
-      password: process.env.DB_PW || 'jun',
+      user: process.env.DB_USER || 'anki',
+      password: process.env.DB_PW || 'anki',
       database: process.env.DB_NAME || 'anki',
     },
     pool: {

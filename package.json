@@ -4,7 +4,8 @@
   "description": "anki-app-core は、 暗記アプリを簡単に作成するための REST API バックエンドを目指して作られています。",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -r dotenv/config server/express.js",
+    "dev": "nodemon -r dotenv/config server/server.js",
+    "start": "node -r dotenv/config server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

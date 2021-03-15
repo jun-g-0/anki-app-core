@@ -1,0 +1,68 @@
+GET http://localhost:3003/api/v1/questions
+
+###
+
+GET http://localhost:3003/api/v1/questions/3
+
+###
+
+POST http://localhost:3003/api/v1/questions/ HTTP/1.1
+content-type: application/json
+
+{
+  "question": "sample question post"
+}
+
+###
+
+PUT http://localhost:3003/api/v1/questions/3 HTTP/1.1
+content-type: application/json
+
+{
+  "question": "sample question put"
+}
+
+###
+
+DELETE http://localhost:3003/api/v1/questions/17
+
+######
+# choice section
+######
+
+GET http://localhost:3003/api/v1/choices
+
+###
+
+GET http://localhost:3003/api/v1/choices/2
+
+###
+
+POST http://localhost:3003/api/v1/choices/ HTTP/1.1
+content-type: application/json
+
+{
+  "choice": "sample choice post",
+  "question_id": 2,
+  "is_correct": false
+}
+
+###
+
+PUT http://localhost:3003/api/v1/choices/3 HTTP/1.1
+content-type: application/json
+
+{
+  "question": "sample question put"
+}
+
+###
+
+DELETE http://localhost:3003/api/v1/choices/73
+
+###
+
+
+
+
+###

@@ -24,6 +24,8 @@ answers: 正答
 
 ## Endpoint
 
+/api/v1/ 共通
+
 ### questions 質問
 
 **`GET`** /questions 質問一覧の取得

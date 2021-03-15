@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      Demonstation of
+      <a href="https://github.com/jun-g-0/anki-app-core">anki-app-core</a>
+    </h1>
+    <section class="api">
+      <header><h2>APIs:</h2></header>
+      <select name="method" id="method">
+        <option value="GET">GET</option>
+        <option value="POST">POST</option>
+        <option value="PUT">PUT</option>
+        <option value="DELETE">DELETE</option>
+      </select>
+      http://localhost:3003/api/v1/
+      <select name="resource" id="resource">
+        <option value="questions/">questions/</option>
+        <option value="choices/">choices/</option>
+      </select>
+      <input type="text" id="pass" />
+      <button id="trigger" onclick="fetchData()">GO!</button>
+      <br />
+
+      <textarea name="reqbody" id="reqbody">
+  {
+    reqest_body: 'something'
+  }</textarea
+      >
+      <br />
+    </section>
+    <section class="result">
+      <header><h2>Result:</h2></header>
+      <div id="result"></div>
+    </section>
+    <script>
+      const fetchData = async () => {
+        let test = await fetch(
+          'https://pokeapi.co/api/v2/pokemon/?offset=1&limit=1'
+        );
+        console.log('test1:', test);
+        test = await test.json();
+        console.log('test2:', test);
+        let method = document.getElementById('method').value;
+        let resource = document.getElementById('resource').value;
+        let pass = document.getElementById('pass').value;
+        let reqbody = document.getElementById('reqbody').value;
+
+        let myPath = new Request(
+          `http://localhost:3003/api/v1/${resource}${pass}`
+        );
+
+        let myHeaders = new Headers();
+        myHeaders.append('Content-Type', 'application/json');
+
+        let myInit =
+          method === 'POST' || method === 'PUT'
+            ? {
+                method: method,
+                headers: myHeaders,
+                body: reqbody,
+                mode: 'cors',
+              }
+            : {
+                method: method,
+                mode: 'cors',
+              };
+
+        console.log('myPath:', myPath);
+        console.log('myInit:', myInit);
+
+        let result = await fetch(myPath, myInit);
+        console.log('result1:', result);
+        result = await result.json();
+        result = JSON.stringify(result);
+        console.log('result2:', result);
+        // let result = await fetch(myPath, myInit);
+        // result = await result.json();
+        // console.log(result);
+
+        let resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = result;
+      };
+    </script>
+    <!-- <script type="module" src="app.js"></script> -->
+  </body>
+</html>

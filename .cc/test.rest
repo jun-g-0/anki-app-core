@@ -24,7 +24,7 @@ content-type: application/json
 
 ###
 
-DELETE http://localhost:3003/api/v1/questions/17
+DELETE http://localhost:3003/api/v1/questions/1
 
 ######
 # choice section
@@ -49,11 +49,11 @@ content-type: application/json
 
 ###
 
-PUT http://localhost:3003/api/v1/choices/3 HTTP/1.1
+PUT http://localhost:3003/api/v1/choices/63 HTTP/1.1
 content-type: application/json
 
 {
-  "question": "sample question put"
+  "choice": "sample choice put"
 }
 
 ###

@@ -14,7 +14,8 @@ const setupServer = () => {
    **************************************************/
   app.get('/api/v1/questions', async (req, res) => {
     const result = await knex.select().from('questions');
-    res.send(result);
+    console.log(result);
+    res.json(result);
   });
 
   app.get('/api/v1/questions/:id', async (req, res) => {
@@ -25,7 +26,7 @@ const setupServer = () => {
 
     // no error handling yet
     const result = await knex('questions').where('id', +req.params.id);
-    res.status(200).send(result).end();
+    res.status(200).json(result).end();
   });
 
   app.post('/api/v1/questions/', async (req, res) => {
@@ -80,7 +81,7 @@ const setupServer = () => {
    **************************************************/
   app.get('/api/v1/choices', async (req, res) => {
     const result = await knex.select().from('choices');
-    res.send(result);
+    res.json(result);
   });
 
   app.get('/api/v1/choices/:qid', async (req, res) => {
@@ -91,7 +92,7 @@ const setupServer = () => {
 
     // no error handling yet
     const result = await knex('choices').where('question_id', +req.params.qid);
-    res.status(200).send(result).end();
+    res.status(200).json(result).end();
   });
 
   app.post('/api/v1/choices/', async (req, res) => {

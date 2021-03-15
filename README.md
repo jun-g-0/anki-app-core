@@ -32,7 +32,7 @@ answers: 正答
 
 **`POST`** /questions/ 質問の追加
 
-**`PATCH`** /questions/:id 質問の修正
+**`PUT`** /questions/:id 質問の更新
 
 **`DELETE`** /questions/:id 質問の削除
 
@@ -40,22 +40,10 @@ answers: 正答
 
 **`GET`** /choices 選択肢一覧の取得
 
-**`GET`** /choices/:qid 選択肢の取得
+**`GET`** /choices/:qid 質問 ID に対応した選択肢(複数)の取得
 
 **`POST`** /choices/ 選択肢の追加
 
-**`PATCH`** /choices/:id 選択肢の修正
+**`PUT`** /choices/:id 選択肢の更新
 
 **`DELETE`** /choices/:id 選択肢の削除
-
-### answers 正答
-
-**`GET`** /answers 正答一覧の取得
-
-**`GET`** /answers/:id 正答の取得
-
-**`POST`** /answers/ 正答の追加
-
-**`PATCH`** /answers/:id 正答の修正
-
-**`DELETE`** /answers/:id 正答の削除

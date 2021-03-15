@@ -7,6 +7,11 @@ Node.js 上で作動し、リレーショナルデータベースにおける運
 
 ---
 
+※このリポジトリは Code Chrysalis の生徒であるときに作成しました（This was created during my time as a student at Code Chrysalis）.
+2021/3/15 v0.1 時点
+
+---
+
 ## データ構造
 
 questions: 質問
@@ -54,8 +59,3 @@ answers: 正答
 **`PATCH`** /answers/:id 正答の修正
 
 **`DELETE`** /answers/:id 正答の削除
-
----
-
-※このリポジトリは Code Chrysalis の生徒であるときに作成しました（This was created during my time as a student at Code Chrysalis）.
-2021/3/15 v0.1 時点

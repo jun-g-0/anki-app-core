@@ -11,9 +11,14 @@
     <h1>
       Demonstation of
       <a href="https://github.com/jun-g-0/anki-app-core">anki-app-core</a>
+      <p id="url">
+        <a href="https://github.com/jun-g-0/anki-app-core"
+          >https://github.com/jun-g-0/anki-app-core</a
+        >
+      </p>
     </h1>
     <section class="api">
-      <header><h2>APIs:</h2></header>
+      <header><h2>Request:</h2></header>
       <select name="method" id="method">
         <option value="GET">GET</option>
         <option value="POST">POST</option>
@@ -28,17 +33,22 @@
       <input type="text" id="pass" />
       <button id="trigger" onclick="fetchData()">GO!</button>
       <br />
-
+      <text id="writebody">body</text>
+      <br />
       <textarea name="reqbody" id="reqbody">
   {
-    reqest_body: 'something'
+    "column": "newValue"
   }</textarea
       >
       <br />
     </section>
+    <section class="pic">
+      <header><h2>Database:</h2></header>
+      <img src="../public/gh_er.png" alt="er" />
+    </section>
     <section class="result">
       <header><h2>Result:</h2></header>
-      <div id="result"></div>
+      <pre id="result"></pre>
     </section>
     <script>
       const fetchData = async () => {
@@ -73,12 +83,14 @@
                 mode: 'cors',
               };
 
+        console.log(myInit);
+
         let result = await fetch(myPath, myInit);
         result = await result.json();
-        result = JSON.stringify(result);
+        result = JSON.stringify(result, null, 4);
 
         let resultDiv = document.getElementById('result');
-        resultDiv.innerHTML = result;
+        resultDiv.innerText = result;
       };
     </script>
   </body>

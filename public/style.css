@@ -1,5 +1,59 @@
 textarea {
-  resize: none;
-  width: 300px;
+  width: 599px;
   height: 60px;
+}
+
+#url {
+  font-size: small;
+  font-weight: normal;
+}
+#writebody {
+  font-size: xx-small;
+  font-weight: normal;
+}
+
+body {
+  color: rgb(68, 68, 68);
+  display: grid;
+  grid-template:
+    'header header'
+    'api    pic   '
+    'result result';
+  background-color: #f4f9f9;
+  font-family: sans-serif;
+}
+
+h1 {
+  grid-area: header;
+  background-color: #a4ebf3;
+  margin: -7px -7px -7px -7px;
+  padding: 7px;
+}
+
+h1 p {
+  grid-area: header;
+  background-color: #a4ebf3;
+  margin: -7px -7px -7px -7px;
+  padding: 7px;
+}
+
+.api {
+  grid-area: api;
+}
+
+.result {
+  grid-area: result;
+}
+header {
+  background-color: #ccf2f4;
+  margin: -15px -7px;
+  padding: 0px 7px;
+}
+
+.pic {
+  grid-area: pic;
+}
+
+img {
+  width: 700px;
 }

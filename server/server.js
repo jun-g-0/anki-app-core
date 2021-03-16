@@ -30,6 +30,7 @@ const setupServer = () => {
   });
 
   app.post('/api/v1/questions/', async (req, res) => {
+    console.log(req.body);
     if (!(req.body && req.body.hasOwnProperty('question'))) {
       res.status(400).end();
       return;

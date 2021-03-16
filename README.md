@@ -18,7 +18,7 @@ questions: 質問
 
 choices: 選択肢
 
-answers: 正答
+![er](./public/gh_er.png)
 
 ---
 

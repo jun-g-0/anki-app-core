@@ -1,6 +1,6 @@
 textarea {
   width: 599px;
-  height: 60px;
+  height: 80px;
 }
 
 #url {
@@ -18,7 +18,8 @@ body {
   grid-template:
     'header header'
     'api    pic   '
-    'result result';
+    'result result'
+    / 650px 700px;
   background-color: #f4f9f9;
   font-family: sans-serif;
 }
@@ -26,14 +27,14 @@ body {
 h1 {
   grid-area: header;
   background-color: #a4ebf3;
-  margin: -7px -7px -7px -7px;
+  margin: -7px -70px -7px -7px;
   padding: 7px;
 }
 
 h1 p {
   grid-area: header;
   background-color: #a4ebf3;
-  margin: -7px -7px -7px -7px;
+  margin: -7px -70px -7px -7px;
   padding: 7px;
 }
 
@@ -46,7 +47,7 @@ h1 p {
 }
 header {
   background-color: #ccf2f4;
-  margin: -15px -7px;
+  margin: -15px -70px -15px -7px;
   padding: 0px 7px;
 }
 

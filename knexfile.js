@@ -1,4 +1,7 @@
 // Update with your config settings.
+if (!require.cache['dotenv']) {
+  require('dotenv').config();
+}
 
 module.exports = {
   development: {

@@ -73,22 +73,13 @@
                 mode: 'cors',
               };
 
-        console.log('myPath:', myPath);
-        console.log('myInit:', myInit);
-
         let result = await fetch(myPath, myInit);
-        console.log('result1:', result);
         result = await result.json();
         result = JSON.stringify(result);
-        console.log('result2:', result);
-        // let result = await fetch(myPath, myInit);
-        // result = await result.json();
-        // console.log(result);
 
         let resultDiv = document.getElementById('result');
         resultDiv.innerHTML = result;
       };
     </script>
-    <!-- <script type="module" src="app.js"></script> -->
   </body>
 </html>
